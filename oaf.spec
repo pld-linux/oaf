@@ -1,13 +1,19 @@
 Summary:	OAF - Objects activated by factories library
+Summary(es):	Object activation framework for GNOME
 Summary(pl):	OAF - Objects activated by factories library
+Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Name:		oaf
 Version:	0.6.6
 Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
 Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
+Group(pt_BR):	X11/Bibliotecas
+Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 BuildRequires:	ORBit-devel >= 0.5.1
@@ -29,37 +35,67 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Objects activated by factories library.
 
+%description -l pt_BR
+Sistema de ativação de objetos para o GNOME. Usa o ORBit.
+
+%description -l es
+OAF is an object activation framework for GNOME. It uses ORBit.
+
 %package devel
 Summary:	Header files etc to develop oaf applications
+Summary(es):	Libraries and include files for OAF
 Summary(pl):	Pliki nag³ówkowe i inne do oaf
+Summary(pt_BR):	Bibliotecas e arquivos de inclusão para o OAF
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
 Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 Requires:	popt-devel
 
 %description devel
 Header files etc you can use to develop oaf applications.
 
+%description -l es devel
+Libraries and include files for OAF.
+
 %description -l pl devel
 Pakiet ten zaziewra pliki nag³ówkowe i inne do oaf niezbêdne przy
 tworzeniu aplikacji opartych o t± bibliotekê.
 
+%description -l pt_BR devel
+Bibliotecas e arquivos de inclusão para o OAF.
+
 %package static
 Summary:	Static oaf libraries
+Summary(es):	Libraries estáticas for OAF
 Summary(pl):	Biblioteka statyczna oaf
+Summary(pt_BR):	Bibliotecas estáticas para o OAF
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
 Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
 Static oaf libraries.
 
+%description -l es static
+Libraries estáticas for OAF.
+
 %description -l pl static
 Biblioteka statyczna oaf.
+
+%description -l pt_BR static
+Bibliotecas estáticas para o OAF.
 
 %prep
 %setup -q
