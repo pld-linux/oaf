@@ -4,6 +4,7 @@ Version:	0.5.1
 Release:	2
 License:	GPL
 Group:		X11/Libraries
+Group(de):	X11/Libraries
 Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/oaf/%{name}-%{version}.tar.gz
@@ -24,6 +25,7 @@ Objects activated by factories library.
 Summary:	Header files etc to develop oaf applications
 Summary(pl):	Pliki nag³ówkowe i inne do oaf
 Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
 Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -39,6 +41,7 @@ tworzeniu aplikacji opartych o t± bibliotekê.
 Summary:	Static oaf libraries
 Summary(pl):	Biblioteka statyczna oaf
 Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
 Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
@@ -54,7 +57,6 @@ Biblioteka statyczna oaf.
 
 %build
 gettextize --copy --force
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--enable-static \
 	--enable-more-warnings=no
@@ -66,8 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf AUTHORS ChangeLog NEWS README TODO oaf-config.xml.sample
 
@@ -85,8 +85,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/oaf-run-query
 %attr(755,root,root) %{_bindir}/oafd
 %{_datadir}/oaf
-%dir /etc/oaf
-%config(noreplace) /etc/oaf/*.xml
+%dir %{_sysconfdir}/oaf
+%config(noreplace) %{_sysconfdir}/oaf/*.xml
 
 %files devel
 %defattr(644,root,root,755)
