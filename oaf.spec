@@ -1,7 +1,7 @@
 Summary:	OAF - Objects activated by factories library
 Name:		oaf
 Version:	0.5.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(fr):	X11/Librairies
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
-gzip -9nf AUTHORS ChangeLog NEWS README TODO
+gzip -9nf AUTHORS ChangeLog NEWS README TODO oaf-config.xml.sample
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -79,15 +79,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %attr(755,root,root) %{_bindir}/oaf-client
 %attr(755,root,root) %{_bindir}/oaf-run-query
 %attr(755,root,root) %{_bindir}/oafd
 %{_datadir}/oaf
+%dir /etc/oaf
+%config(noreplace) /etc/oaf/*.xml
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
 %attr(755,root,root) %{_bindir}/oaf-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
