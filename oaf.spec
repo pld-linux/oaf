@@ -3,7 +3,7 @@ Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Name:		oaf
 Version:	0.6.8
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -147,6 +147,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/oaf-client
 %attr(755,root,root) %{_bindir}/oaf-run-query
 %attr(755,root,root) %{_bindir}/oaf-slay
+%attr(755,root,root) %{_bindir}/oaf-sysconf
 %attr(755,root,root) %{_bindir}/oafd
 %{_datadir}/oaf
 %dir %{_sysconfdir}/oaf
