@@ -10,7 +10,7 @@ Release:	4
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/oaf/0.6/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-default-search-patch.patch
+Patch0:		%{name}-default-search-path.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
