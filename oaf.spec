@@ -95,4 +95,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/idl/*
 
 %files static
-%attr(644,root,root) %{_libdir}/lib*.a
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
