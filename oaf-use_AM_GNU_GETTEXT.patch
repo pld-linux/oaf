@@ -1,7 +1,7 @@
-diff -Nru oaf-0.6.5/acinclude.m4 oaf-0.6.5.new/acinclude.m4
---- oaf-0.6.5/acinclude.m4	Thu Aug 31 11:14:40 2000
-+++ oaf-0.6.5.new/acinclude.m4	Thu Jan  1 01:00:00 1970
-@@ -1,335 +0,0 @@
+diff -Nru oaf-0.6.6/acinclude.m4 oaf-0.6.6.new/acinclude.m4
+--- oaf-0.6.6/acinclude.m4	Tue May 22 21:32:02 2001
++++ oaf-0.6.6.new/acinclude.m4	Thu Jan  1 01:00:00 1970
+@@ -1,337 +0,0 @@
 -# Macro to add for using GNU gettext.
 -# Ulrich Drepper <drepper@cygnus.com>, 1995.
 -#
@@ -25,6 +25,7 @@ diff -Nru oaf-0.6.5/acinclude.m4 oaf-0.6.5.new/acinclude.m4
 -    AC_MSG_RESULT($USE_NLS)
 -    AC_SUBST(USE_NLS)
 -
+-    BUILD_INCLUDED_LIBINTL=no
 -    USE_INCLUDED_LIBINTL=no
 -
 -    dnl If we use NLS figure out what method
@@ -201,6 +202,7 @@ diff -Nru oaf-0.6.5/acinclude.m4 oaf-0.6.5.new/acinclude.m4
 -    done
 -
 -    dnl Make all variables we use known to autoconf.
+-    AC_SUBST(BUILD_INCLUDED_LIBINTL)
 -    AC_SUBST(USE_INCLUDED_LIBINTL)
 -    AC_SUBST(CATALOGS)
 -    AC_SUBST(CATOBJEXT)
@@ -337,15 +339,23 @@ diff -Nru oaf-0.6.5/acinclude.m4 oaf-0.6.5.new/acinclude.m4
 -   sed -e "/^#/d" -e "/^\$/d" -e "s,.*,	$posrcprefix& \\\\," -e "\$s/\(.*\) \\\\/\1/" \
 -	< $srcdir/po/POTFILES.in > po/POTFILES
 -  ])
-diff -Nru oaf-0.6.5/configure.in oaf-0.6.5.new/configure.in
---- oaf-0.6.5/configure.in	Tue Feb 27 06:24:38 2001
-+++ oaf-0.6.5.new/configure.in	Mon Apr 30 11:28:35 2001
-@@ -37,7 +37,7 @@
+diff -Nru oaf-0.6.6/configure.in oaf-0.6.6.new/configure.in
+--- oaf-0.6.6/configure.in	Tue Aug 21 06:40:14 2001
++++ oaf-0.6.6.new/configure.in	Wed Aug 22 03:53:40 2001
+@@ -37,8 +37,7 @@
  
  dnl internationalization support
- ALL_LINGUAS="da de es fi fr ga gl hu it ja ko no pt_BR ro ru sk sl sv tr uk pl"
+ ALL_LINGUAS="da de es fi fr ga gl hu it ja ko nn no pt_BR ro ru sk sl sv ta tr uk pl zh_TW.Big5"
 -AM_GNU_OAF_GETTEXT
+-
 +AM_GNU_GETTEXT
  
- 
  dnl Checks for libraries.
+ AM_PATH_GLIB(1.2.0,,
+@@ -219,5 +218,4 @@
+ po/Makefile.in
+ oaf-config
+ oafConf.sh
+-],
+-[sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile])
++])
