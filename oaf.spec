@@ -1,6 +1,6 @@
 Summary:	OAF - Objects activated by factories library
 Name:		oaf
-Version:	0.6.1
+Version:	0.6.2
 Release:	1
 License:	GPL
 Group:		X11/Libraries
@@ -83,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %attr(755,root,root) %{_bindir}/oaf-client
 %attr(755,root,root) %{_bindir}/oaf-run-query
+%attr(755,root,root) %{_bindir}/oaf-slay
 %attr(755,root,root) %{_bindir}/oafd
 %{_datadir}/oaf
 %dir %{_sysconfdir}/oaf
