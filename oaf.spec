@@ -1,6 +1,5 @@
 Summary:	OAF - Objects activated by factories library
-Summary(es):	Object activation framework for GNOME
-Summary(pl):	OAF - Objects activated by factories library
+Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Name:		oaf
 Version:	0.6.6
@@ -33,17 +32,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-Objects activated by factories library.
+Objects activated by factories library for GNOME. It uses ORBit.
 
 %description -l pt_BR
 Sistema de ativação de objetos para o GNOME. Usa o ORBit.
 
-%description -l es
-OAF is an object activation framework for GNOME. It uses ORBit.
-
 %package devel
 Summary:	Header files etc to develop oaf applications
-Summary(es):	Libraries and include files for OAF
 Summary(pl):	Pliki nag³ówkowe i inne do oaf
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para o OAF
 Group:		X11/Development/Libraries
@@ -60,11 +55,8 @@ Requires:	popt-devel
 %description devel
 Header files etc you can use to develop oaf applications.
 
-%description -l es devel
-Libraries and include files for OAF.
-
 %description -l pl devel
-Pakiet ten zaziewra pliki nag³ówkowe i inne do oaf niezbêdne przy
+Pakiet ten zawiera pliki nag³ówkowe i inne do oaf niezbêdne przy
 tworzeniu aplikacji opartych o t± bibliotekê.
 
 %description -l pt_BR devel
