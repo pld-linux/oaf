@@ -6,12 +6,13 @@ Summary(ru):	OAF - система активации объектов GNOME
 Summary(uk):	OAF - система активац╕╖ об'╓кт╕в GNOME
 Name:		oaf
 Version:	0.6.10
-Release:	6
+Release:	7
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/oaf/0.6/%{name}-%{version}.tar.bz2
 # Source0-md5: ed9aa2ceb70bba34034b3134b22d2729
 Patch0:		%{name}-default-search-path.patch
+Patch1:		%{name}-am18.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -101,12 +102,12 @@ Bibliotecas estАticas para o OAF.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 sed -e s/AM_GNU_OAF_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
-rm -f missing aclocal.m4
 xml-i18n-toolize --copy --force
 %{__libtoolize}
 %{__gettextize}
