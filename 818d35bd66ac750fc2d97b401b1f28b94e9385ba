@@ -1,0 +1,4 @@
+- move oaf-default-search-patch.patch oaf-default-search-path.patch
+- this patch was prepared to add <item>/usr/X11R6/share/oaf</item>
+  to <searchpath> </searchpath> in default oafd config file
+  (/etc/X11/GNOME/oaf/oaf-config.xml)
