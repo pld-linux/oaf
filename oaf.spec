@@ -89,7 +89,7 @@ libtoolize --copy --force
 gettextize --copy --force
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	--enable-static \
 	--disable-gtk-doc \
