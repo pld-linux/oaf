@@ -2,8 +2,8 @@ Summary:	OAF - Objects activated by factories library
 Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Name:		oaf
-Version:	0.6.8
-Release:	4
+Version:	0.6.10
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.bz2
