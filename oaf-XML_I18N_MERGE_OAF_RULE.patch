@@ -1,0 +1,13 @@
+diff -Nur oaf-0.6.7/oafd/Makefile.am oaf-0.6.7-new/oafd/Makefile.am
+--- oaf-0.6.7/oafd/Makefile.am	Tue Sep  4 06:07:42 2001
++++ oaf-0.6.7-new/oafd/Makefile.am	Mon Nov  5 12:25:46 2001
+@@ -48,7 +48,8 @@
+ oaf_in_files = OAF_naming-service.oaf.in
+ oafinfo_DATA = $(oaf_in_files:.oaf.in=.oaf)
+ 
+-@XML_I18N_MERGE_OAF_RULE@
++@XML_I18N_MERGE_OAF_RULE1@
++@XML_I18N_MERGE_OAF_RULE2@
+ 
+ EXTRA_DIST=ac-query-lex.l ac-query-parse.y $(oaf_in_files) $(oafinfo_DATA)
+ 
