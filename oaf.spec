@@ -107,7 +107,7 @@ rm -f missing
 xml-i18n-toolize --copy --force
 %{__libtoolize}
 %{__gettextize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
