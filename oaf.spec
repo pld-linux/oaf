@@ -3,7 +3,7 @@ Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Name:		oaf
 Version:	0.6.8
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -14,7 +14,6 @@ Group(pt_BR):	X11/Bibliotecas
 Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-cvsfixes.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -100,7 +99,6 @@ Bibliotecas estáticas para o OAF.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
