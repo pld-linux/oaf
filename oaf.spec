@@ -5,7 +5,7 @@ Summary(ru):	OAF - система активации объектов GNOME
 Summary(uk):	OAF - система активац╕╖ об'╓кт╕в GNOME
 Name:		oaf
 Version:	0.6.10
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.bz2
@@ -22,8 +22,8 @@ BuildRequires:	libwrap-devel
 BuildRequires:	libxml-devel
 BuildRequires:	popt-devel >= 1.5
 BuildRequires:	scrollkeeper
-Prereq:		/sbin/ldconfig
-Prereq:		scrollkeeper
+Requires(post,postun):	/sbin/ldconfig
+Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	liboaf0
 
@@ -125,6 +125,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 /sbin/ldconfig
 /usr/bin/scrollkeeper-update
@@ -132,9 +135,6 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 /sbin/ldconfig
 /usr/bin/scrollkeeper-update
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
