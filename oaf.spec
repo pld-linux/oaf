@@ -1,7 +1,7 @@
 Summary:	OAF - Objects activated by factories library
 Name:		oaf
 Version:	0.6.5
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -33,6 +33,7 @@ Group(de):	X11/Entwicklung/Libraries
 Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
+Requires:	popt-devel
 
 %description devel
 Header files etc you can use to develop oaf applications.
