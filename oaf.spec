@@ -39,6 +39,9 @@ Obsoletes:	liboaf0
 %description
 Objects activated by factories library for GNOME. It uses ORBit.
 
+%description -l pl
+Obiekty aktywowane przez agentów dla GNOME. U¿ywa ORBit-a.
+
 %description -l pt_BR
 Sistema de ativação de objetos para o GNOME. Usa o ORBit.
 
