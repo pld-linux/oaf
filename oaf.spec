@@ -2,8 +2,8 @@ Summary:	OAF - Objects activated by factories library
 Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Name:		oaf
-Version:	0.6.6
-Release:	2
+Version:	0.6.7
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -13,8 +13,9 @@ Group(pl):	X11/Biblioteki
 Group(pt_BR):	X11/Bibliotecas
 Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
+Patch1:		%{name}-XML_I18N_MERGE_OAF_RULE.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -92,6 +93,7 @@ Bibliotecas estáticas para o OAF.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 xml-i18n-toolize --copy --force
