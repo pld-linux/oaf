@@ -33,7 +33,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	liboaf0
 
 %define		_prefix		/usr/X11R6
-%define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
+%define		_mandir		%{_prefix}/man
+%define         _sysconfdir     /etc/X11/GNOME
 
 %description
 Objects activated by factories library for GNOME. It uses ORBit.
@@ -121,11 +122,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=%{_aclocaldir} \
-	omf_dest_dir=%{_omf_dest_dir}/omf/%{name}
-
+	m4datadir=%{_aclocaldir}
 
 gzip -9nf AUTHORS ChangeLog NEWS README TODO oaf-config.xml.sample
+
+%find_lang %{name}
 
 %post
 /sbin/ldconfig
@@ -138,16 +139,16 @@ gzip -9nf AUTHORS ChangeLog NEWS README TODO oaf-config.xml.sample
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_bindir}/oaf-[^c]*
 %attr(755,root,root) %{_bindir}/oaf-client
-%attr(755,root,root) %{_bindir}/oaf-run-query
-%attr(755,root,root) %{_bindir}/oaf-slay
-%attr(755,root,root) %{_bindir}/oaf-sysconf
 %attr(755,root,root) %{_bindir}/oafd
 %{_datadir}/oaf
+%{_datadir}/idl/*
+%{_mandir}/man1/*
 %dir %{_sysconfdir}/oaf
 %config(noreplace) %{_sysconfdir}/oaf/*.xml
 
@@ -159,7 +160,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/liboaf
 %{_aclocaldir}/oaf.m4
-%{_datadir}/idl/*
 
 %files static
 %defattr(644,root,root,755)
