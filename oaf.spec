@@ -1,14 +1,16 @@
 Summary:	OAF - Objects activated by factories library
+Summary(ko):	±×³ð¿ë °´Ã¼ È°¼º ±¸Á¶
 Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Summary(ru):	OAF - ÓÉÓÔÅÍÁ ÁËÔÉ×ÁÃÉÉ ÏÂßÅËÔÏ× GNOME
 Summary(uk):	OAF - ÓÉÓÔÅÍÁ ÁËÔÉ×ÁÃ¦§ ÏÂ'¤ËÔ¦× GNOME
 Name:		oaf
 Version:	0.6.10
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/oaf/0.6/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-default-search-patch.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -50,6 +52,7 @@ OAF (Object Activation Framework) ÎÁÄÁ¤ ÍÅÈÁÎ¦ÚÍ ÁËÔÉ×ÁÃ¦§ ÄÌÑ
 
 %package devel
 Summary:	Header files etc to develop oaf applications
+Summary(ko):	OAF¸¦ À§ÇÑ ¶óÀÌºê·¯¸®¿Í Çì´õ ÆÄÀÏ
 Summary(pl):	Pliki nag³ówkowe i inne do oaf
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para o OAF
 Summary(ru):	æÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ÐÒÏÇÒÁÍÍ Ó ÉÓÐÏÌØÚÏ×ÁÎÉÅÍ OAF
@@ -99,6 +102,7 @@ Bibliotecas estáticas para o OAF.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
