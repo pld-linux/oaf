@@ -2,7 +2,7 @@ Summary:	OAF - Objects activated by factories library
 Summary(pl):	OAF - Objects activated by factories library
 Name:		oaf
 Version:	0.6.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -21,7 +21,7 @@ BuildRequires:	libtool
 BuildRequires:	libwrap-devel
 BuildRequires:	libxml-devel
 BuildRequires:	popt-devel >= 1.5
-BuildRequires:	xml-i18n-tools
+BuildRequires:	xml-i18n-tools >= 0.9-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -66,6 +66,7 @@ Biblioteka statyczna oaf.
 %patch0 -p1
 
 %build
+xml-i18n-toolize --copy --force
 libtoolize --copy --force
 gettextize --copy --force
 aclocal
