@@ -108,8 +108,8 @@ xml-i18n-toolize --copy --force
 libtoolize --copy --force
 gettextize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-static \
 	--disable-gtk-doc \
