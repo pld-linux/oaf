@@ -9,6 +9,7 @@ Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/oaf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
+Patch1:		%{name}-no-gtk-doc.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -18,6 +19,7 @@ BuildRequires:	glib-devel >= 1.2.0
 BuildRequires:	libxml-devel
 BuildRequires:	libtool
 BuildRequires:	popt-devel >= 1.5
+BuildRequires:	xml-i18n-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -59,7 +61,8 @@ Biblioteka statyczna oaf.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 libtoolize --copy --force
@@ -69,6 +72,7 @@ autoconf
 automake -a -c
 %configure \
 	--enable-static \
+	--disable-gtk-doc \
 	--enable-more-warnings=no
 %{__make}
 
