@@ -1,6 +1,8 @@
 Summary:	OAF - Objects activated by factories library
 Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativaГЦo de objetos para o GNOME
+Summary(ru):	OAF - система активации объектов GNOME
+Summary(uk):	OAF - система активац╕╖ об'╓кт╕в GNOME
 Name:		oaf
 Version:	0.6.10
 Release:	1
@@ -38,10 +40,20 @@ Obiekty aktywowane przez agentСw dla GNOME. U©ywa ORBit-a.
 %description -l pt_BR
 Sistema de ativaГЦo de objetos para o GNOME. Usa o ORBit.
 
+%description -l ru
+OAF (Object Activation Framework) предоставляет механизм активации для
+компонентов GNOME. Это замена GOAD для платформы GNOME 2.
+
+%description -l uk
+OAF (Object Activation Framework) нада╓ механ╕зм активац╕╖ для
+компонент╕в GNOME. Це зам╕на GOAD для платформи GNOME 2.
+
 %package devel
 Summary:	Header files etc to develop oaf applications
 Summary(pl):	Pliki nagЁСwkowe i inne do oaf
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para o OAF
+Summary(ru):	Файлы для разработки программ с использованием OAF
+Summary(uk):	Файли для розробки програм з використанням OAF
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	popt-devel
@@ -56,6 +68,14 @@ tworzeniu aplikacji opartych o t╠ bibliotekЙ.
 
 %description devel -l pt_BR
 Bibliotecas e arquivos de inclusЦo para o OAF.
+
+%description devel -l ru
+Этот пакет содержит файлы, необходимые для разработки программ,
+использующих OAF.
+
+%description devel -l uk
+Цей пакет м╕стить файли, необх╕дн╕ для розробки програм, як╕
+використовують OAF.
 
 %package static
 Summary:	Static oaf libraries
