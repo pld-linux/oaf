@@ -106,7 +106,7 @@ mv -f configure.in.tmp configure.in
 rm -f missing
 xml-i18n-toolize --copy --force
 %{__libtoolize}
-gettextize --copy --force
+%{__gettextize}
 aclocal
 %{__autoconf}
 %{__automake}
