@@ -105,9 +105,9 @@ Bibliotecas estáticas para o OAF.
 %patch -p1
 
 %build
-sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
+sed -e s/AM_GNU_OAF_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
-rm -f missing
+rm -f missing aclocal.m4
 xml-i18n-toolize --copy --force
 %{__libtoolize}
 %{__gettextize}
