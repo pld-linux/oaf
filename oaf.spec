@@ -3,7 +3,7 @@ Summary(pl):	Biblioteka OAF
 Summary(pt_BR):	Sistema de ativação de objetos para o GNOME
 Name:		oaf
 Version:	0.6.7
-Release:	1
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -14,8 +14,7 @@ Group(pt_BR):	X11/Bibliotecas
 Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
-Patch1:		%{name}-XML_I18N_MERGE_OAF_RULE.patch
+Patch0:		%{name}-cvsfixes.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -23,14 +22,19 @@ BuildRequires:	flex
 BuildRequires:	gettext-devel
 BuildRequires:	gtk-doc
 BuildRequires:	glib-devel >= 1.2.0
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libwrap-devel
 BuildRequires:	libxml-devel
 BuildRequires:	popt-devel >= 1.5
-BuildRequires:	xml-i18n-tools >= 0.9-2
+BuildRequires:	scrollkeeper
+Prereq:		/sbin/ldconfig
+Prereq:		scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	liboaf0
 
 %define		_prefix		/usr/X11R6
+%define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
 %description
 Objects activated by factories library for GNOME. It uses ORBit.
@@ -52,6 +56,7 @@ Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 Requires:	popt-devel
+Obsoletes:	liboaf0-devel
 
 %description devel
 Header files etc you can use to develop oaf applications.
@@ -93,9 +98,11 @@ Bibliotecas estáticas para o OAF.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
+sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
+mv -f configure.in.tmp configure.in
+rm -f missing
 xml-i18n-toolize --copy --force
 libtoolize --copy --force
 gettextize --copy --force
@@ -113,12 +120,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=%{_aclocaldir}
+	m4datadir=%{_aclocaldir} \
+	omf_dest_dir=%{_omf_dest_dir}/omf/%{name}
+
 
 gzip -9nf AUTHORS ChangeLog NEWS README TODO oaf-config.xml.sample
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post
+/sbin/ldconfig
+/usr/bin/scrollkeeper-update
+
+%postun
+/sbin/ldconfig
+/usr/bin/scrollkeeper-update
 
 %clean
 rm -rf $RPM_BUILD_ROOT
