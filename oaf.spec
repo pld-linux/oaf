@@ -1,6 +1,6 @@
 Summary:	OAF - Objects activated by factories library
 Name:		oaf
-Version:	0.3.0
+Version:	0.4.0
 Release:	1
 License:	GPL
 Group:		X11/Libraries
@@ -12,6 +12,7 @@ BuildRequires:	flex
 BuildRequires:	gettext-devel
 BuildRequires:	glib-devel >= 1.2.0
 BuildRequires:	libxml-devel
+BuildRequires:	popt-devel >= 1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
