@@ -1,0 +1,10 @@
+--- oaf-0.6.10/oaf-config.xml~	Fri Nov 15 17:21:57 2002
++++ oaf-0.6.10/oaf-config.xml	Fri Nov 15 17:21:57 2002
+@@ -3,6 +3,7 @@
+ <oafconfig>
+ 
+ <searchpath>
++  <item>/usr/X11R6/share/oaf</item>
+ </searchpath>
+ 
+ </oafconfig>
