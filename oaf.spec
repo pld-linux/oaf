@@ -1,7 +1,7 @@
 Summary:	OAF - Objects activated by factories library
 Name:		oaf
 Version:	0.6.5
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
