@@ -1,28 +1,27 @@
 Summary:	OAF - Objects activated by factories library
 Summary(pl):	OAF - Objects activated by factories library
 Name:		oaf
-Version:	0.6.5
-Release:	5
+Version:	0.6.6
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
-Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/oaf/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/oaf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
-Patch1:		%{name}-no-gtk-doc.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	flex
 BuildRequires:	gettext-devel
-BuildRequires:	popt-devel >= 1.5
-BuildRequires:	libwrap-devel
-BuildRequires:	ORBit-devel >= 0.5.1
-BuildRequires:	xml-i18n-tools
+BuildRequires:	gtk-doc
 BuildRequires:	glib-devel >= 1.2.0
+BuildRequires:	libtool
+BuildRequires:	libwrap-devel
 BuildRequires:	libxml-devel
+BuildRequires:	popt-devel >= 1.5
+BuildRequires:	xml-i18n-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -65,7 +64,6 @@ Biblioteka statyczna oaf.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 libtoolize --copy --force
