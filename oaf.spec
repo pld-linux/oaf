@@ -6,13 +6,14 @@ Summary(ru):	OAF - система активации объектов GNOME
 Summary(uk):	OAF - система активац╕╖ об'╓кт╕в GNOME
 Name:		oaf
 Version:	0.6.10
-Release:	7
+Release:	8
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/oaf/0.6/%{name}-%{version}.tar.bz2
 # Source0-md5: ed9aa2ceb70bba34034b3134b22d2729
 Patch0:		%{name}-default-search-path.patch
 Patch1:		%{name}-am18.patch
+Patch2:		%{name}-locale-names.patch
 BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,7 +26,6 @@ BuildRequires:	libtool
 BuildRequires:	libwrap-devel
 BuildRequires:	libxml-devel
 BuildRequires:	popt-devel >= 1.5
-BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -58,7 +58,7 @@ Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para o OAF
 Summary(ru):	Файлы для разработки программ с использованием OAF
 Summary(uk):	Файли для розробки програм з використанням OAF
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	popt-devel
 Obsoletes:	liboaf0-devel
 
@@ -86,7 +86,7 @@ Summary(es):	Libraries estАticas for OAF
 Summary(pl):	Biblioteka statyczna oaf
 Summary(pt_BR):	Bibliotecas estАticas para o OAF
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static oaf libraries.
@@ -104,6 +104,9 @@ Bibliotecas estАticas para o OAF.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+
+mv -f po/{no,nb}.po
 
 %build
 sed -e s/AM_GNU_OAF_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
@@ -144,7 +147,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO oaf-config.xml.sample
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%attr(755,root,root) %{_bindir}/oaf-[^c]*
+%attr(755,root,root) %{_bindir}/oaf-[!c]*
 %attr(755,root,root) %{_bindir}/oaf-client
 %attr(755,root,root) %{_bindir}/oafd
 %{_datadir}/oaf
