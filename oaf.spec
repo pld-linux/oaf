@@ -50,11 +50,11 @@ Obsoletes:	liboaf0-devel
 %description devel
 Header files etc you can use to develop oaf applications.
 
-%description -l pl devel
+%description devel -l pl
 Pakiet ten zawiera pliki nag³ówkowe i inne do oaf niezbêdne przy
 tworzeniu aplikacji opartych o t± bibliotekê.
 
-%description -l pt_BR devel
+%description devel -l pt_BR
 Bibliotecas e arquivos de inclusão para o OAF.
 
 %package static
@@ -68,13 +68,13 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static oaf libraries.
 
-%description -l es static
+%description static -l es
 Libraries estáticas for OAF.
 
-%description -l pl static
+%description static -l pl
 Biblioteka statyczna oaf.
 
-%description -l pt_BR static
+%description static -l pt_BR
 Bibliotecas estáticas para o OAF.
 
 %prep
