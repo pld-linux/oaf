@@ -29,8 +29,6 @@ Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	liboaf0
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 %define         _sysconfdir     /etc/X11/GNOME
 
 %description
