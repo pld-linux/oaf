@@ -2,7 +2,7 @@ Summary:	OAF - Objects activated by factories library
 Summary(pl):	OAF - Objects activated by factories library
 Name:		oaf
 Version:	0.6.5
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -11,6 +11,7 @@ Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/oaf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 Patch1:		%{name}-no-gtk-doc.patch
+BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
