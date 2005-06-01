@@ -6,7 +6,7 @@ Summary(ru):	OAF - система активации объектов GNOME
 Summary(uk):	OAF - система активац╕╖ об'╓кт╕в GNOME
 Name:		oaf
 Version:	0.6.10
-Release:	8
+Release:	9
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/oaf/0.6/%{name}-%{version}.tar.bz2
@@ -59,7 +59,9 @@ Summary(ru):	Файлы для разработки программ с использованием OAF
 Summary(uk):	Файли для розробки програм з використанням OAF
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	popt-devel
+Requires:	ORBit-devel >= 0.5.1
+Requires:	glib-devel >= 1.2.0
+Requires:	popt-devel >= 1.5
 Obsoletes:	liboaf0-devel
 
 %description devel
