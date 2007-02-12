@@ -1,9 +1,9 @@
 Summary:	OAF - Objects activated by factories library
-Summary(ko):	╠вЁП©К ╟╢ц╪ х╟╪╨ ╠╦а╤
-Summary(pl):	Biblioteka OAF
-Summary(pt_BR):	Sistema de ativaГЦo de objetos para o GNOME
-Summary(ru):	OAF - система активации объектов GNOME
-Summary(uk):	OAF - система активац╕╖ об'╓кт╕в GNOME
+Summary(ko.UTF-8):   Й╥╦К├┬Л ╘ Й╟²Л╡╢ М≥°Л└╠ Й╣╛Л║╟
+Summary(pl.UTF-8):   Biblioteka OAF
+Summary(pt_BR.UTF-8):   Sistema de ativaц╖цёo de objetos para o GNOME
+Summary(ru.UTF-8):   OAF - я│п╦я│я┌п╣п╪п╟ п╟п╨я┌п╦п╡п╟я├п╦п╦ п╬п╠я┼п╣п╨я┌п╬п╡ GNOME
+Summary(uk.UTF-8):   OAF - я│п╦я│я┌п╣п╪п╟ п╟п╨я┌п╦п╡п╟я├я√я≈ п╬п╠'я■п╨я┌я√п╡ GNOME
 Name:		oaf
 Version:	0.6.10
 Release:	9
@@ -36,27 +36,27 @@ Obsoletes:	liboaf0
 %description
 Objects activated by factories library for GNOME. It uses ORBit.
 
-%description -l pl
-Obiekty aktywowane przez agentСw dla GNOME. U©ywa ORBit-a.
+%description -l pl.UTF-8
+Obiekty aktywowane przez agentцЁw dla GNOME. Uе╪ywa ORBit-a.
 
-%description -l pt_BR
-Sistema de ativaГЦo de objetos para o GNOME. Usa o ORBit.
+%description -l pt_BR.UTF-8
+Sistema de ativaц╖цёo de objetos para o GNOME. Usa o ORBit.
 
-%description -l ru
-OAF (Object Activation Framework) предоставляет механизм активации для
-компонентов GNOME. Это замена GOAD для платформы GNOME 2.
+%description -l ru.UTF-8
+OAF (Object Activation Framework) п©я─п╣п╢п╬я│я┌п╟п╡п╩я▐п╣я┌ п╪п╣я┘п╟п╫п╦п╥п╪ п╟п╨я┌п╦п╡п╟я├п╦п╦ п╢п╩я▐
+п╨п╬п╪п©п╬п╫п╣п╫я┌п╬п╡ GNOME. п╜я┌п╬ п╥п╟п╪п╣п╫п╟ GOAD п╢п╩я▐ п©п╩п╟я┌я└п╬я─п╪я▀ GNOME 2.
 
-%description -l uk
-OAF (Object Activation Framework) нада╓ механ╕зм активац╕╖ для
-компонент╕в GNOME. Це зам╕на GOAD для платформи GNOME 2.
+%description -l uk.UTF-8
+OAF (Object Activation Framework) п╫п╟п╢п╟я■ п╪п╣я┘п╟п╫я√п╥п╪ п╟п╨я┌п╦п╡п╟я├я√я≈ п╢п╩я▐
+п╨п╬п╪п©п╬п╫п╣п╫я┌я√п╡ GNOME. п╕п╣ п╥п╟п╪я√п╫п╟ GOAD п╢п╩я▐ п©п╩п╟я┌я└п╬я─п╪п╦ GNOME 2.
 
 %package devel
 Summary:	Header files etc to develop oaf applications
-Summary(ko):	OAF╦╕ ю╖гя ╤Сюл╨Й╥╞╦╝©м гЛ╢У фдюо
-Summary(pl):	Pliki nagЁСwkowe i inne do oaf
-Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para o OAF
-Summary(ru):	Файлы для разработки программ с использованием OAF
-Summary(uk):	Файли для розробки програм з використанням OAF
+Summary(ko.UTF-8):   OAFК╔╪ Л°└М∙° К²╪Л²╢К╦▄К÷╛К╕╛Л≥─ М≈╓К█■ М▄▄Л²╪
+Summary(pl.UTF-8):   Pliki nagе┌цЁwkowe i inne do oaf
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusцёo para o OAF
+Summary(ru.UTF-8):   п╓п╟п╧п╩я▀ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪ OAF
+Summary(uk.UTF-8):   п╓п╟п╧п╩п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪ п╥ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐п╪ OAF
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	ORBit-devel >= 0.5.1
@@ -67,40 +67,40 @@ Obsoletes:	liboaf0-devel
 %description devel
 Header files etc you can use to develop oaf applications.
 
-%description devel -l pl
-Pakiet ten zawiera pliki nagЁСwkowe i inne do oaf niezbЙdne przy
-tworzeniu aplikacji opartych o t╠ bibliotekЙ.
+%description devel -l pl.UTF-8
+Pakiet ten zawiera pliki nagе┌цЁwkowe i inne do oaf niezbд≥dne przy
+tworzeniu aplikacji opartych o tд┘ bibliotekд≥.
 
-%description devel -l pt_BR
-Bibliotecas e arquivos de inclusЦo para o OAF.
+%description devel -l pt_BR.UTF-8
+Bibliotecas e arquivos de inclusцёo para o OAF.
 
-%description devel -l ru
-Этот пакет содержит файлы, необходимые для разработки программ,
-использующих OAF.
+%description devel -l ru.UTF-8
+п╜я┌п╬я┌ п©п╟п╨п╣я┌ я│п╬п╢п╣я─п╤п╦я┌ я└п╟п╧п╩я▀, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪,
+п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦я┘ OAF.
 
-%description devel -l uk
-Цей пакет м╕стить файли, необх╕дн╕ для розробки програм, як╕
-використовують OAF.
+%description devel -l uk.UTF-8
+п╕п╣п╧ п©п╟п╨п╣я┌ п╪я√я│я┌п╦я┌я▄ я└п╟п╧п╩п╦, п╫п╣п╬п╠я┘я√п╢п╫я√ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪, я▐п╨я√
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ OAF.
 
 %package static
 Summary:	Static oaf libraries
-Summary(es):	Libraries estАticas for OAF
-Summary(pl):	Biblioteka statyczna oaf
-Summary(pt_BR):	Bibliotecas estАticas para o OAF
+Summary(es.UTF-8):   Libraries estц║ticas for OAF
+Summary(pl.UTF-8):   Biblioteka statyczna oaf
+Summary(pt_BR.UTF-8):   Bibliotecas estц║ticas para o OAF
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static oaf libraries.
 
-%description static -l es
-Libraries estАticas for OAF.
+%description static -l es.UTF-8
+Libraries estц║ticas for OAF.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna oaf.
 
-%description static -l pt_BR
-Bibliotecas estАticas para o OAF.
+%description static -l pt_BR.UTF-8
+Bibliotecas estц║ticas para o OAF.
 
 %prep
 %setup -q
