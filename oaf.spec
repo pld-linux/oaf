@@ -1,9 +1,9 @@
 Summary:	OAF - Objects activated by factories library
-Summary(ko.UTF-8):   그놈용 객체 활성 구조
-Summary(pl.UTF-8):   Biblioteka OAF
-Summary(pt_BR.UTF-8):   Sistema de ativação de objetos para o GNOME
-Summary(ru.UTF-8):   OAF - система активации объектов GNOME
-Summary(uk.UTF-8):   OAF - система активації об'єктів GNOME
+Summary(ko.UTF-8):	그놈용 객체 활성 구조
+Summary(pl.UTF-8):	Biblioteka OAF
+Summary(pt_BR.UTF-8):	Sistema de ativação de objetos para o GNOME
+Summary(ru.UTF-8):	OAF - система активации объектов GNOME
+Summary(uk.UTF-8):	OAF - система активації об'єктів GNOME
 Name:		oaf
 Version:	0.6.10
 Release:	9
@@ -52,11 +52,11 @@ OAF (Object Activation Framework) надає механізм активації
 
 %package devel
 Summary:	Header files etc to develop oaf applications
-Summary(ko.UTF-8):   OAF를 위한 라이브러리와 헤더 파일
-Summary(pl.UTF-8):   Pliki nagłówkowe i inne do oaf
-Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusão para o OAF
-Summary(ru.UTF-8):   Файлы для разработки программ с использованием OAF
-Summary(uk.UTF-8):   Файли для розробки програм з використанням OAF
+Summary(ko.UTF-8):	OAF를 위한 라이브러리와 헤더 파일
+Summary(pl.UTF-8):	Pliki nagłówkowe i inne do oaf
+Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para o OAF
+Summary(ru.UTF-8):	Файлы для разработки программ с использованием OAF
+Summary(uk.UTF-8):	Файли для розробки програм з використанням OAF
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	ORBit-devel >= 0.5.1
@@ -84,9 +84,9 @@ Bibliotecas e arquivos de inclusão para o OAF.
 
 %package static
 Summary:	Static oaf libraries
-Summary(es.UTF-8):   Libraries estáticas for OAF
-Summary(pl.UTF-8):   Biblioteka statyczna oaf
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para o OAF
+Summary(es.UTF-8):	Libraries estáticas for OAF
+Summary(pl.UTF-8):	Biblioteka statyczna oaf
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para o OAF
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
