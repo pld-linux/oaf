@@ -26,6 +26,7 @@ BuildRequires:	libtool
 BuildRequires:	libwrap-devel
 BuildRequires:	libxml-devel
 BuildRequires:	popt-devel >= 1.5
+BuildRequires:	sed >= 4.0
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -111,8 +112,7 @@ Bibliotecas estáticas para o OAF.
 mv -f po/{no,nb}.po
 
 %build
-sed -e s/AM_GNU_OAF_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
-mv -f configure.in.tmp configure.in
+sed -i s/AM_GNU_OAF_GETTEXT/AM_GNU_GETTEXT/ configure.in
 xml-i18n-toolize --copy --force
 %{__libtoolize}
 %{__gettextize}
