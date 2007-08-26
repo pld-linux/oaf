@@ -7,9 +7,9 @@ Summary(uk.UTF-8):	OAF - система активації об'єктів GNOME
 Name:		oaf
 Version:	0.6.10
 Release:	9
-License:	GPL
+License:	LGPL v2+ (library), GPL v2+ (programs)
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/oaf/0.6/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/oaf/0.6/%{name}-%{version}.tar.bz2
 # Source0-md5:	ed9aa2ceb70bba34034b3134b22d2729
 Patch0:		%{name}-default-search-path.patch
 Patch1:		%{name}-am18.patch
@@ -29,8 +29,8 @@ BuildRequires:	popt-devel >= 1.5
 BuildRequires:	sed >= 4.0
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	liboaf0
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _sysconfdir     /etc/X11/GNOME
 
@@ -58,6 +58,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe i inne do oaf
 Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para o OAF
 Summary(ru.UTF-8):	Файлы для разработки программ с использованием OAF
 Summary(uk.UTF-8):	Файли для розробки програм з використанням OAF
+License:	LGPL v2+
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	ORBit-devel >= 0.5.1
@@ -88,6 +89,7 @@ Summary:	Static oaf libraries
 Summary(es.UTF-8):	Libraries estáticas for OAF
 Summary(pl.UTF-8):	Biblioteka statyczna oaf
 Summary(pt_BR.UTF-8):	Bibliotecas estáticas para o OAF
+License:	LGPL v2+
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -148,10 +150,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO oaf-config.xml.sample
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
 %attr(755,root,root) %{_bindir}/oaf-[!c]*
 %attr(755,root,root) %{_bindir}/oaf-client
 %attr(755,root,root) %{_bindir}/oafd
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/oaf
 %{_datadir}/idl/*
 %{_mandir}/man1/*
