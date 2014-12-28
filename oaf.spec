@@ -18,7 +18,7 @@ BuildRequires:	ORBit-devel >= 0.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flex
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk-doc
 BuildRequires:	glib-devel >= 1.2.0
 BuildRequires:	intltool
